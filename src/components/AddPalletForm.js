@@ -11,8 +11,9 @@ function AddPalletForm(props) {
       name: event.target.name.value,
       genre: event.target.genre.value,
       price: event.target.price.value,
-      // accolade: event.target.accolade.value,
+      quantity: event.target.quantity.value,
       id: v4()
+      
     });
   }
   return (
@@ -33,20 +34,8 @@ function AddPalletForm(props) {
         <label>Game Genre:
           <br></br>
           <input name="genre" placeholder="game genre (e.g. strategy)" />
-          {/* <select value={props.selectionInput} onChange={props.handleSelectChange}>
-            <option value="" disabled={true}>Select a Genre</option>
-            <option value="Puzzle">Puzzle</option>
-            <option value="Strategy">Strategy</option>
-            <option value="Dexterity">Dexterity</option>
-          </select> */}
         </label>
         <br></br>
-        {/* <label>Accolades:
-          <br></br>
-          "Spiel des Jahres" Winner:<input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner" />
-          <br></br>
-          No Accolades<input type="radio" value="No Accolades" name="No Accolades" />
-        </label> */}
         <br></br>
         <button type="submit">Add Pallet of Games</button>
       </form>
@@ -57,6 +46,5 @@ function AddPalletForm(props) {
 
 AddPalletForm.propTypes = {
   onNewPalletAddition: PropTypes.func,
-  // onRadioBoxChange: PropTypes.func
 }
 export default AddPalletForm;

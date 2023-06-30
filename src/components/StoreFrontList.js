@@ -11,7 +11,7 @@ function StoreFrontList(props){
         name={pallet.name}
         genre={pallet.genre}
         price={pallet.price}
-        accolade={pallet.accolade}
+        quantity={pallet.quantity}
         id={pallet.id} />)}
         <hr />
   </React.Fragment>

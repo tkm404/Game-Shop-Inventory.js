@@ -19,18 +19,6 @@ class StoreFrontControl extends React.Component {
     }));
   }
 
-  // handleSelectChange = (event) => {
-  //   this.setState({
-  //   checkBoxInput: event.target.value
-  //   });
-  // }
-
-  // handleRadioChange = (event) => {
-  //   this.setState({
-  //     radioBoxInput: event.target.value
-  //   });
-  // }
-
   handleAddingNewPalletToList = (newPallet) => {
     const newMainPalletList = this.state.mainPalletList.concat(newPallet);
     this.setState({mainPalletList: newMainPalletList,
