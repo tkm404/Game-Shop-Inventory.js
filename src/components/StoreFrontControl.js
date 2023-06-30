@@ -7,7 +7,8 @@ class StoreFrontControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: true,
+      mainPalletList: []
     };
   }
 
@@ -24,12 +25,12 @@ class StoreFrontControl extends React.Component {
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
       currentlyVisibleState =
-        <StoreFrontList />
-      buttonText = "Return to Available Games"
+        <StoreFrontList palletList={this.state.mainPalletList}/>
+      buttonText = "Return to Order Form"
     } else {
       currentlyVisibleState =
         <AddPalletForm />
-      buttonText = "Buy Pallet";
+      buttonText = "Return to Available Games";
     }
     return (
 
