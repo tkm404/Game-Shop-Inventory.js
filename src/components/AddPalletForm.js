@@ -11,7 +11,7 @@ function AddPalletForm(props) {
       name: event.target.name.value,
       genre: event.target.genre.value,
       price: event.target.price.value,
-      accolade: event.target.accolade.value,
+      // accolade: event.target.accolade.value,
       id: v4()
     });
   }
@@ -32,12 +32,13 @@ function AddPalletForm(props) {
         <br></br>
         <label>Game Genre:
           <br></br>
-          <select value={props.selectionInput} onChange={props.handleSelectChange}>
+          <input name="genre" placeholder="game genre (e.g. strategy)" />
+          {/* <select value={props.selectionInput} onChange={props.handleSelectChange}>
             <option value="" disabled={true}>Select a Genre</option>
             <option value="Puzzle">Puzzle</option>
             <option value="Strategy">Strategy</option>
             <option value="Dexterity">Dexterity</option>
-          </select>
+          </select> */}
         </label>
         <br></br>
         {/* <label>Accolades:
