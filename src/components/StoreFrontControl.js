@@ -1,6 +1,7 @@
 import React from "react";
 import StoreFrontList from './StoreFrontList'
 import AddPalletForm from './AddPalletForm'
+import PuzzleMenu from './PuzzleMenu'
 
 class StoreFrontControl extends React.Component {
 
@@ -8,21 +9,31 @@ class StoreFrontControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainPalletList: []
-      
+      mainPalletList: [],
+      puzzleMenu: false,
+      strategyMenu: false,
+      dexterityMenu: false,
     };
   }
 
   handleClick = () => {
     this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
+      formVisibleOnPage: !prevState.formVisibleOnPage,
+      puzzleMenu: false
+    }));
+  }
+
+  handlePuzzleClick = () => {
+    this.setState(prevState => ({
+      puzzleMenu: !prevState.puzzleMenu
     }));
   }
 
   handleAddingNewPalletToList = (newPallet) => {
     const newMainPalletList = this.state.mainPalletList.concat(newPallet);
     this.setState({mainPalletList: newMainPalletList,
-                  formVisibleOnPage: true});
+                  formVisibleOnPage: true,
+                  puzzleMenu: false});
   }
 
 
@@ -30,10 +41,14 @@ class StoreFrontControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
+    if (this.state.puzzleMenu) {
+      <PuzzleMenu />
+
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState =
         <StoreFrontList palletList={this.state.mainPalletList}/>
-      buttonText = "Return to Order Form"
+      buttonText = "Return to Order Form";
+      
     } else {
       currentlyVisibleState =
         <AddPalletForm
@@ -48,6 +63,8 @@ class StoreFrontControl extends React.Component {
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
+        <button onClick={this.handlePuzzleClick}>See Puzzles</button>
+        
       </React.Fragment>
     )
   }
