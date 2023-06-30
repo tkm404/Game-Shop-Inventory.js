@@ -6,24 +6,32 @@ function CreUpForm(props){
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
         <label>Game Name: 
+          <br></br>
         <input name="name" placeholder="game name"/>
         </label>
-        <label>Game Price: 
+        <br></br>
+        <label>Game Price:
+          <br></br> 
         <input type="number" name="price"/>
         </label>
+        <br></br>
         <label>Game Genre:
-        <select name="genreSelect">
-          <option value="">Select a Game Genre</option>
-          <option value="puzzle" >Puzzle</option>
-          <option value="strategy" >Strategy</option>
-          <option value="dexterity" >Dexterity</option>
-        </select>
+          <br></br>
+          <label>Puzzle <input type="checkbox" value="puzzle" /></label>
+          <label>Strategy <input type="checkbox" value="strategy" /></label>
+          <label>Dexterity <input type="checkbox" value="dexterity" /></label>
         </label>
-        <label>"Spiel des Jahres" Winner:</label>
-        <input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner">"Spiel des Jahres" Winner</input>
-        <input type="radio" value="No Accolades" name="No Accolades">No Accolades</input>
+        <br></br>
+        <label>Accolades:
+          <br></br>
+        <label>"Spiel des Jahres" Winner:<input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner"/> </label>
+        <br></br>
+        <label>No Accolades<input type="radio" value="No Accolades" name="No Accolades"/></label>
+        </label>
+        <br></br>
         <button type="submit">{props.buttonText}</button>
       </form>
+      <hr />
     </React.Fragment>
   )
 }
