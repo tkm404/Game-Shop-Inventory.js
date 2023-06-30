@@ -6,11 +6,8 @@ import StoreFrontControl from './StoreFrontControl'
 function App() {
   return (
     <div className="App">
-      
-        <React.Fragment>
           <Header />
           <StoreFrontControl />
-        </React.Fragment>
     </div>
   );
 }
