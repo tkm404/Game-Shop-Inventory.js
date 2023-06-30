@@ -18,6 +18,12 @@ class StoreFrontControl extends React.Component {
     }));
   }
 
+  handleAddingNewPalletToList = (newPallet) => {
+    const newMainPalletList = this.state.mainPalletList.concat(newPallet);
+    this.setState({mainPalletList: newMainPalletList,
+                  formVisibleOnPage: false});
+  }
+
 
 
   render() {
@@ -29,7 +35,7 @@ class StoreFrontControl extends React.Component {
       buttonText = "Return to Order Form"
     } else {
       currentlyVisibleState =
-        <AddPalletForm />
+        <AddPalletForm onNewPalletAddition={this.handleAddingNewPalletToList}/>
       buttonText = "Return to Available Games";
     }
     return (
