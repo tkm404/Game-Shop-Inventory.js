@@ -1,7 +1,6 @@
 import React from "react";
 import Pallet from "./Pallet";
 import PropTypes from "prop-types"
-import { v4 } from "uuid";
 
 function StoreFrontList(props){
   return(
