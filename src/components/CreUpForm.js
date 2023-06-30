@@ -11,7 +11,7 @@ function CreUpForm(props){
           <option value="Strategy">Strategy</option>
           <option value="Dexterity">Dexterity</option>
         </select>
-        <button type="submit">Selection Made</button>
+        <button type="submit">{props.buttonText}</button>
       </form>
     </React.Fragment>
   )
