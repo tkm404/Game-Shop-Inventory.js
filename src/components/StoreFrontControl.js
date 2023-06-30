@@ -43,7 +43,7 @@ class StoreFrontControl extends React.Component {
     let buttonText = null;
     if (this.state.puzzleMenu) {
       <PuzzleMenu />
-
+      buttonText = "Return to Available Games";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState =
         <StoreFrontList palletList={this.state.mainPalletList}/>
