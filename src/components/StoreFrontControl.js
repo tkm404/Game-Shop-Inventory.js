@@ -1,6 +1,7 @@
 import React from "react";
 import StoreFrontList from './StoreFrontList'
 import AddPalletForm from './AddPalletForm'
+import PuzzleMenu from './PuzzleMenu'
 
 class StoreFrontControl extends React.Component {
 
@@ -8,35 +9,31 @@ class StoreFrontControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      checkBoxInput: "",
-      radioBoxInput: "",
-      mainPalletList: []
-      
+      mainPalletList: [],
+      puzzleMenu: false,
+      strategyMenu: false,
+      dexterityMenu: false,
     };
   }
 
   handleClick = () => {
     this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
+      formVisibleOnPage: !prevState.formVisibleOnPage,
+      puzzleMenu: false
     }));
   }
 
-  handleCheckChange = (event) => {
-    this.setState({
-    checkBoxInput: event.target.value
-    });
-  }
-
-  handleRadioChange = (event) => {
-    this.setState({
-      radioBoxInput: event.target.value
-    });
+  handlePuzzleClick = () => {
+    this.setState(prevState => ({
+      puzzleMenu: !prevState.puzzleMenu
+    }));
   }
 
   handleAddingNewPalletToList = (newPallet) => {
     const newMainPalletList = this.state.mainPalletList.concat(newPallet);
     this.setState({mainPalletList: newMainPalletList,
-                  formVisibleOnPage: false});
+                  formVisibleOnPage: true,
+                  puzzleMenu: false});
   }
 
 
@@ -44,15 +41,19 @@ class StoreFrontControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
+    if (this.state.puzzleMenu) {
+      <PuzzleMenu />
+      buttonText = "Return to Available Games";
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState =
         <StoreFrontList palletList={this.state.mainPalletList}/>
-      buttonText = "Return to Order Form"
+      buttonText = "Return to Order Form";
+      
     } else {
       currentlyVisibleState =
-        <AddPalletForm 
-        onCheckboxChange ={this.handleCheckChange}
-        onRadioBoxChange ={this.handleRadioChange} 
+        <AddPalletForm
+        selectionInput={this.state.selectionInput} 
+        onSelectionChange ={this.handleSelectChange}
         onNewPalletAddition={this.handleAddingNewPalletToList}/>
 
       buttonText = "Return to Available Games";
@@ -62,6 +63,8 @@ class StoreFrontControl extends React.Component {
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
+        <button onClick={this.handlePuzzleClick}>See Puzzles</button>
+        
       </React.Fragment>
     )
   }
