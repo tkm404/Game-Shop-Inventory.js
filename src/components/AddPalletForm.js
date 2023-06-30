@@ -19,7 +19,8 @@ function AddPalletForm(props){
       <React.Fragment>
     <p>psst, hey kid. You wanna buy some Pallets?</p>
     <CreUpForm 
-
+      handleRadio={handleRadioValue}
+      handleCheck={handleCheckValue}
       formSubmissionHandler={handleAddingNewPalletToList}
       buttonText="Selection Made"
       />
@@ -28,6 +29,8 @@ function AddPalletForm(props){
 }
 
 AddPalletForm.propTypes = {
-  onNewPalletAddition: PropTypes.func
+  onNewPalletAddition: PropTypes.func,
+  onCheckboxChange: PropTypes.func,
+  onRadioBoxChange: PropTypes.func
 }
 export default AddPalletForm;

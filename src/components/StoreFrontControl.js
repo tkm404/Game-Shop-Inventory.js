@@ -8,8 +8,10 @@ class StoreFrontControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      selectionMade: '',
+      checkBoxInput: "",
+      radioBoxInput: "",
       mainPalletList: []
+      
     };
   }
 
@@ -19,6 +21,17 @@ class StoreFrontControl extends React.Component {
     }));
   }
 
+  handleCheckChange = (event) => {
+    this.setState({
+    checkBoxInput: event.target.value
+    });
+  }
+
+  handleRadioChange = (event) => {
+    this.setState({
+      radioBoxInput: event.target.value
+    });
+  }
 
   handleAddingNewPalletToList = (newPallet) => {
     const newMainPalletList = this.state.mainPalletList.concat(newPallet);
@@ -37,7 +50,11 @@ class StoreFrontControl extends React.Component {
       buttonText = "Return to Order Form"
     } else {
       currentlyVisibleState =
-        <AddPalletForm onNewPalletAddition={this.handleAddingNewPalletToList}/>
+        <AddPalletForm 
+        onCheckboxChange ={this.handleCheckChange}
+        onRadioBoxChange ={this.handleRadioChange} 
+        onNewPalletAddition={this.handleAddingNewPalletToList}/>
+
       buttonText = "Return to Available Games";
     }
     return (

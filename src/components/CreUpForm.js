@@ -17,16 +17,16 @@ function CreUpForm(props){
         <br></br>
         <label>Game Genre:
           <br></br>
-          <label>Puzzle <input type="checkbox" value="puzzle" /></label>
-          <label>Strategy <input type="checkbox" value="strategy" /></label>
-          <label>Dexterity <input type="checkbox" value="dexterity" /></label>
+          Puzzle: <input type="checkbox" checked="puzzle" />
+          Strategy: <input type="checkbox" value="strategy" />
+          Dexterity: <input type="checkbox" value="dexterity" />
         </label>
         <br></br>
         <label>Accolades:
           <br></br>
-        <label>"Spiel des Jahres" Winner:<input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner"/> </label>
+        "Spiel des Jahres" Winner:<input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner"/>
         <br></br>
-        <label>No Accolades<input type="radio" value="No Accolades" name="No Accolades"/></label>
+        No Accolades<input type="radio" value="No Accolades" name="No Accolades"/>
         </label>
         <br></br>
         <button type="submit">{props.buttonText}</button>
