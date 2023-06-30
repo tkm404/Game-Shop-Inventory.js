@@ -13,6 +13,7 @@ function StoreFrontList(props){
         price={pallet.price}
         accolade={pallet.accolade}
         id={pallet.id} />)}
+        <hr />
   </React.Fragment>
   )
 

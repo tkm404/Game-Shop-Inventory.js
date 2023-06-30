@@ -7,6 +7,7 @@ function Pallet(props){
       <h3>{props.name}</h3>
       <h3>Genre: {props.genre}</h3>
       <p><em>${props.price}</em></p>
+      <hr/>
     </React.Fragment>
   )
 }

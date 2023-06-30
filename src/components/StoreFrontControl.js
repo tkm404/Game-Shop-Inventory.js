@@ -8,7 +8,6 @@ class StoreFrontControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      selectionInput: "",
       mainPalletList: []
       
     };
@@ -20,11 +19,11 @@ class StoreFrontControl extends React.Component {
     }));
   }
 
-  handleSelectChange = (event) => {
-    this.setState({
-    checkBoxInput: event.target.value
-    });
-  }
+  // handleSelectChange = (event) => {
+  //   this.setState({
+  //   checkBoxInput: event.target.value
+  //   });
+  // }
 
   // handleRadioChange = (event) => {
   //   this.setState({
@@ -35,7 +34,7 @@ class StoreFrontControl extends React.Component {
   handleAddingNewPalletToList = (newPallet) => {
     const newMainPalletList = this.state.mainPalletList.concat(newPallet);
     this.setState({mainPalletList: newMainPalletList,
-                  formVisibleOnPage: false});
+                  formVisibleOnPage: true});
   }
 
 
