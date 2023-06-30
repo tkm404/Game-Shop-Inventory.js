@@ -9,23 +9,33 @@ class StoreFrontControl extends React.Component {
     this.state = {
       formVisibleOnPage: false
     };
-
   }
 
-  render(){
+  handleClick = () => {
+    this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage
+    }));
+  }
+
+
+
+  render() {
     let currentlyVisibleState = null;
-      if (this.state.formVisibleOnPage) {
-        currentlyVisibleState = 
+    let buttonText = null;
+    if (this.state.formVisibleOnPage) {
+      currentlyVisibleState =
         <StoreFrontList />
-      } else {
-        currentlyVisibleState = 
+      buttonText = "Return to Available Games"
+    } else {
+      currentlyVisibleState =
         <AddPalletForm />
-      }
-    return(
-      
+      buttonText = "Buy Pallet";
+    }
+    return (
+
       <React.Fragment>
         {currentlyVisibleState}
-
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     )
   }
