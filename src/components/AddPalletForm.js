@@ -36,6 +36,11 @@ function AddPalletForm(props) {
           <input name="genre" placeholder="game genre (e.g. strategy)" />
         </label>
         <br></br>
+        <label>
+          Quantity Per Pallet:
+          <br></br>
+          <input name="quantity" type="number" defaultValue='130' />
+        </label>
         <br></br>
         <button type="submit">Add Pallet of Games</button>
       </form>
