@@ -1,6 +1,6 @@
 import React from "react";
 
-function StoreFrontList(){
+function StoreFrontList(props){
   <React.Fragment>
     <p>Placeholder</p>
   </React.Fragment>

@@ -1,5 +1,6 @@
 import React from "react";
 import StoreFrontList from './StoreFrontList'
+import AddPalletForm from './AddPalletForm'
 
 class StoreFrontControl extends React.Component {
 
@@ -14,12 +15,11 @@ class StoreFrontControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
       if (this.state.formVisibleOnPage) {
-        currentlyVisibleState = <StoreFrontList />
+        currentlyVisibleState = 
+        <StoreFrontList />
       } else {
         currentlyVisibleState = 
-        <React.Fragment>
-          <p>Placeholder</p>
-        </React.Fragment>
+        <AddPalletForm />
       }
     return(
       
