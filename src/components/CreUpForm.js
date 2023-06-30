@@ -5,17 +5,20 @@ function CreUpForm(props){
   return(
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <label>Game Name: </label>
-        <input type="text" name="name" placeholder="game name"/>
-        <label>Game Price: </label>
+        <label>Game Name: 
+        <input name="name" placeholder="game name"/>
+        </label>
+        <label>Game Price: 
         <input type="number" name="price"/>
-        <label>Game Genre:</label>
-        <select value={props.formInput} onChange={props.handleFormChange}>
-          <option value="" disabled="true">Select a Game Genre</option>
-          <option value="genre" >Puzzle</option>
-          <option value="genre" >Strategy</option>
-          <option value="genre" >Dexterity</option>
+        </label>
+        <label>Game Genre:
+        <select name="genreSelect">
+          <option value="">Select a Game Genre</option>
+          <option value="puzzle" >Puzzle</option>
+          <option value="strategy" >Strategy</option>
+          <option value="dexterity" >Dexterity</option>
         </select>
+        </label>
         <label>"Spiel des Jahres" Winner:</label>
         <input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner">"Spiel des Jahres" Winner</input>
         <input type="radio" value="No Accolades" name="No Accolades">No Accolades</input>

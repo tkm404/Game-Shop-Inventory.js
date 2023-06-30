@@ -19,6 +19,7 @@ function AddPalletForm(props){
       <React.Fragment>
     <p>psst, hey kid. You wanna buy some Pallets?</p>
     <CreUpForm 
+
       formSubmissionHandler={handleAddingNewPalletToList}
       buttonText="Selection Made"
       />

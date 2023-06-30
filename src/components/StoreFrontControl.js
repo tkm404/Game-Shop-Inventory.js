@@ -8,6 +8,7 @@ class StoreFrontControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
+      selectionMade: '',
       mainPalletList: []
     };
   }
@@ -17,6 +18,7 @@ class StoreFrontControl extends React.Component {
       formVisibleOnPage: !prevState.formVisibleOnPage
     }));
   }
+
 
   handleAddingNewPalletToList = (newPallet) => {
     const newMainPalletList = this.state.mainPalletList.concat(newPallet);
