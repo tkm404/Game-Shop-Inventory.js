@@ -23,7 +23,7 @@ class StoreFrontControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (!this.state.formVisibleOnPage) {
+    if (this.state.formVisibleOnPage) {
       currentlyVisibleState =
         <StoreFrontList palletList={this.state.mainPalletList}/>
       buttonText = "Return to Order Form"
