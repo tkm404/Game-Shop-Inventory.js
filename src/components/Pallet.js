@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Pallet(props){
+function Pallet(props) {
   return (
     <React.Fragment>
       <h3>{props.name}</h3>
       <h3>Genre: {props.genre}</h3>
       <p><em>${props.price} - item ct.: {props.quantity}</em></p>
-      <hr/>
+      <hr />
     </React.Fragment>
   )
 }

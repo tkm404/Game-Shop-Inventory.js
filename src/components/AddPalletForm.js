@@ -13,7 +13,7 @@ function AddPalletForm(props) {
       price: event.target.price.value,
       quantity: event.target.quantity.value,
       id: v4()
-      
+
     });
   }
   return (

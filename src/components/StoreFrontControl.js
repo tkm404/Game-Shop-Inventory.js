@@ -19,7 +19,7 @@ class StoreFrontControl extends React.Component {
     };
   }
 
-  
+
 
   handleClick = () => {
     this.setState(prevState => ({
@@ -32,7 +32,7 @@ class StoreFrontControl extends React.Component {
     if (this.state.detailMenu >= 4) {
       this.setState(prevState => ({
         detailMenu: prevState.detailMenu - 3
-        
+
       }))
     } else {
       this.setState(prevState => ({
@@ -61,18 +61,18 @@ class StoreFrontControl extends React.Component {
 
     if (this.state.detailMenu === 3) {
       currentlyVisibleState =
-        <DexMenu palletList={this.state.mainPalletList} byDex={this.state.mainPalletList.filter(pallet => pallet.genre === "Dexterity")}/>
-        buttonText = "Return to Available Games"
-        menuButtonText = "x"
+        <DexMenu palletList={this.state.mainPalletList} byDex={this.state.mainPalletList.filter(pallet => pallet.genre === "Dexterity")} />
+      buttonText = "Return to Available Games"
+      menuButtonText = "x"
     }
     else if (this.state.detailMenu === 2) {
       currentlyVisibleState =
-        <StrategyMenu palletLIst={this.state.mainPalletList} byStrategy={this.state.mainPalletList.filter(pallet => pallet.genre === "Strategy")}/>
+        <StrategyMenu palletLIst={this.state.mainPalletList} byStrategy={this.state.mainPalletList.filter(pallet => pallet.genre === "Strategy")} />
       buttonText = "Return to Available Games";
       menuButtonText = "See games by category: Dexterity";
     } else if (this.state.detailMenu === 1) {
       currentlyVisibleState =
-        <PuzzleMenu palletList={this.state.mainPalletList} byPuzzles={this.state.mainPalletList.filter(pallet => pallet.genre === "Puzzle")}/>
+        <PuzzleMenu palletList={this.state.mainPalletList} byPuzzles={this.state.mainPalletList.filter(pallet => pallet.genre === "Puzzle")} />
       buttonText = "Return to Available Games";
       menuButtonText = "See games by category: Strategy";
     } else if (this.state.formVisibleOnPage && this.state.detailMenu === 0) {

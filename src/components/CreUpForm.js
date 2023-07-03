@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function CreUpForm(props){
-  return(
+function CreUpForm(props) {
+  return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <label>Game Name: 
+        <label>Game Name:
           <br></br>
-        <input name="name" placeholder="game name"/>
+          <input name="name" placeholder="game name" />
         </label>
         <br></br>
         <label>Game Price:
-          <br></br> 
-        <input type="number" name="price"/>
+          <br></br>
+          <input type="number" name="price" />
         </label>
         <br></br>
         <label>Game Genre:
@@ -24,9 +24,9 @@ function CreUpForm(props){
         <br></br>
         <label>Accolades:
           <br></br>
-        "Spiel des Jahres" Winner:<input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner"/>
-        <br></br>
-        No Accolades<input type="radio" value="No Accolades" name="No Accolades"/>
+          "Spiel des Jahres" Winner:<input type="radio" value="'Spiel des Jahres' Winner" name="'Spiel des Jahres' Winner" />
+          <br></br>
+          No Accolades<input type="radio" value="No Accolades" name="No Accolades" />
         </label>
         <br></br>
         <button type="submit">{props.buttonText}</button>

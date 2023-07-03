@@ -6,8 +6,8 @@ import StoreFrontControl from './StoreFrontControl'
 function App() {
   return (
     <div className="App">
-          <Header />
-          <StoreFrontControl />
+      <Header />
+      <StoreFrontControl />
     </div>
   );
 }
