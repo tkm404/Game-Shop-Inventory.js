@@ -1,7 +1,9 @@
 import React from "react";
-import StoreFrontList from './StoreFrontList'
-import AddPalletForm from './AddPalletForm'
-import PuzzleMenu from './PuzzleMenu'
+import StoreFrontList from './StoreFrontList';
+import AddPalletForm from './AddPalletForm';
+import PuzzleMenu from './PuzzleMenu';
+import StrategyMenu from "./StrategyMenu";
+import DexMenu from "./DexMenu";
 
 class StoreFrontControl extends React.Component {
 
@@ -27,9 +29,9 @@ class StoreFrontControl extends React.Component {
   }
 
   handleMenuClick = () => {
-    if (this.state.detailMenu >= 3) {
+    if (this.state.detailMenu >= 4) {
       this.setState(prevState => ({
-        detailMenu: prevState.detailMenu - 2
+        detailMenu: prevState.detailMenu - 3
         
       }))
     } else {
@@ -56,9 +58,16 @@ class StoreFrontControl extends React.Component {
     let buttonText = null;
     let menuButtonText = null;
 
-    if (this.state.detailMenu === 2) {
+
+    if (this.state.detailMenu === 3) {
       currentlyVisibleState =
-        <p>Placeholder</p>
+        <DexMenu palletList={this.state.mainPalletList} byDex={this.state.mainPalletList.filter(pallet => pallet.genre === "Dexterity")}/>
+        buttonText = "Return to Available Games"
+        menuButtonText = "x"
+    }
+    else if (this.state.detailMenu === 2) {
+      currentlyVisibleState =
+        <StrategyMenu palletLIst={this.state.mainPalletList} byStrategy={this.state.mainPalletList.filter(pallet => pallet.genre === "Strategy")}/>
       buttonText = "Return to Available Games";
       menuButtonText = "See games by category: Dexterity";
     } else if (this.state.detailMenu === 1) {
