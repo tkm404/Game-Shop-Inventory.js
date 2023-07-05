@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 
 function PalletDetail(props){
-  const { pallet } = props;
+  const { pallet, onClickingDelete } = props;
 
 return (
   <React.Fragment>
@@ -12,7 +12,7 @@ return (
     <h3>{pallet.name} - {pallet.genre}</h3>
     <p><em>${pallet.price} - item ct.: {pallet.quantity}</em></p>
 
-    <button onClick={props.onClickingDelete(pallet.id)}>Delete Pallet</button>
+    <button onClick={() => onClickingDelete(pallet.id)}>Delete Pallet</button>
     <button onClick={props.onUpdateQuantity}>Buy Games</button>
     <hr />
 

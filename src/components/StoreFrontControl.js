@@ -132,8 +132,11 @@ class StoreFrontControl extends React.Component {
       buttonText = "Return to Available Games"
       menuButtonText = "x"
     }
-    else if (this.state.selectedPallet != null && this.state.decrementBy === false) {
-      currentlyVisibleState = <PalletDetail pallet={this.state.selectedPallet} onUpdateQuantity={this.handleDecrementBy} onClickingDelete = {this.handleDeletePallet}/>
+    else if (this.state.selectedPallet != null && !this.state.decrementBy) {
+      currentlyVisibleState = <PalletDetail 
+      pallet={this.state.selectedPallet} 
+      onUpdateQuantity={this.handleDecrementBy} 
+      onClickingDelete={this.handleDeletePallet}/>
       
       buttonText = "Return to Available Games"
       menuButtonText = "x"

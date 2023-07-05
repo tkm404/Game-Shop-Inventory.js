@@ -41,7 +41,7 @@ function BuyGamesForm(props){
         <label>
           Quantity to Purchase:
           <br></br>
-          <input name="quantity" type="number"/>
+          <input name="quantity" type="number" min= '0' max={pallet.quantity}/>
         </label>
         <br></br>
         <button type="submit">Buy Games</button>
