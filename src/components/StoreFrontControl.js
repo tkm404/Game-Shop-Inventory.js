@@ -112,6 +112,14 @@ class StoreFrontControl extends React.Component {
     })
   }
 
+  handleDeletePallet = (id) => {
+    const newMainPalletList = this.state.mainPalletList.filter(pallet => pallet.id !== id);
+    this.setState({
+      mainPalletList: newMainPalletList,
+      selectedPallet: null
+    });
+  }
+
 
   render() {
     let currentlyVisibleState = null;
@@ -125,7 +133,7 @@ class StoreFrontControl extends React.Component {
       menuButtonText = "x"
     }
     else if (this.state.selectedPallet != null && this.state.decrementBy === false) {
-      currentlyVisibleState = <PalletDetail pallet={this.state.selectedPallet} onUpdateQuantity={this.handleDecrementBy}/>
+      currentlyVisibleState = <PalletDetail pallet={this.state.selectedPallet} onUpdateQuantity={this.handleDecrementBy} onClickingDelete = {this.handleDeletePallet}/>
       
       buttonText = "Return to Available Games"
       menuButtonText = "x"
