@@ -9,9 +9,9 @@ function AddPalletForm(props) {
     event.preventDefault();
     props.onNewPalletAddition({
       name: event.target.name.value,
-      genre: event.target.genre.value,
-      price: event.target.price.value,
-      quantity: event.target.quantity.value,
+      genre: props.selectedGenre,
+      price: parseInt(event.target.price.value),
+      quantity: props.defaultQuantity,
       id: v4()
 
     });
@@ -28,18 +28,19 @@ function AddPalletForm(props) {
         <br></br>
         <label>Game Price:
           <br></br>
-          <input type="number" name="price" />
+          <input type="number" name="price"/>
         </label>
         <br></br>
         <label>Game Genre:
           <br></br>
-          <input name="genre" placeholder="game genre (e.g. strategy)" />
+          <input name="genre" value={props.selectedGenre} readOnly/>
+          
         </label>
         <br></br>
         <label>
           Quantity Per Pallet:
           <br></br>
-          <input name="quantity" type="number" defaultValue='130' />
+          <input name="quantity" type="number" value={props.defaultQuantity} readOnly />
         </label>
         <br></br>
         <button type="submit">Add Pallet of Games</button>
@@ -51,5 +52,7 @@ function AddPalletForm(props) {
 
 AddPalletForm.propTypes = {
   onNewPalletAddition: PropTypes.func,
+  selectedGenre: PropTypes.string,
+  defaultQuantity: PropTypes.number
 }
 export default AddPalletForm;
