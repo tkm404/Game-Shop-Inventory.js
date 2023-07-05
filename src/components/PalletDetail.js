@@ -12,7 +12,7 @@ return (
     <h3>{pallet.name} - {pallet.genre}</h3>
     <p><em>${pallet.price} - item ct.: {pallet.quantity}</em></p>
 
-    <button onClick={props.onUpdateQunatity}>Buy Games</button>
+    <button onClick={props.onUpdateQuantity}>Buy Games</button>
     <hr />
 
   </React.Fragment>

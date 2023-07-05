@@ -98,7 +98,9 @@ class StoreFrontControl extends React.Component {
   }
 
   handleDecrementBy = () => {
+    console.log(this.state.decrementBy)
     this.setState({decrementBy: true})
+    
   }
 
   handlePurchaseResult = (palletBoughtFrom) => {
@@ -122,7 +124,7 @@ class StoreFrontControl extends React.Component {
       buttonText = "Return to Available Games"
       menuButtonText = "x"
     }
-    else if (this.state.selectedPallet != null) {
+    else if (this.state.selectedPallet != null && this.state.decrementBy === false) {
       currentlyVisibleState = <PalletDetail pallet={this.state.selectedPallet} onUpdateQuantity={this.handleDecrementBy}/>
       
       buttonText = "Return to Available Games"
