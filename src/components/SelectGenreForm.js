@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 function SelectGenreForm(props) {
   return (
-    <label> Select a Genre:
       <form onSubmit={props.onNewGenreSelection}>
         <select value={props.input} onChange={props.onSelect}>
+          <option value="" disabled={true}>Select a Genre</option>
           <option value="Puzzle">Puzzle</option>
           <option value="Strategy">Strategy</option>
           <option value="Dexterity">Dexterity</option>
@@ -13,7 +13,6 @@ function SelectGenreForm(props) {
         <br></br>
         <button type="submit">Choose Genre</button>
       </form>
-    </label>
   )
 }
 

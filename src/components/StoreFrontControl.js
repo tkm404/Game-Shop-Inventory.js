@@ -77,11 +77,21 @@ class StoreFrontControl extends React.Component {
 
   handleGoToAddPallet = (event) => {
     event.preventDefault();
-    this.setState({
+    if (this.state.userInput === "") {
+      this.setState({
+        userInput: "Puzzle",
+        addDetailsFormVisible: true,
+        formVisibleOnPage: false,
+        detailMenu: 0
+      });
+    } else {
+      this.setState({
       addDetailsFormVisible: true,
       formVisibleOnPage: false,
       detailMenu: 0
     })
+    }
+
   }
 
   handleGoToFormStart = () => {

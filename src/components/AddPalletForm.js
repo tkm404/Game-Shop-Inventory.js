@@ -23,12 +23,12 @@ function AddPalletForm(props) {
       <form onSubmit={handleAddingNewPalletToList}>
         <label>Game Name:
           <br></br>
-          <input name="name" placeholder="game name" />
+          <input required name="name" placeholder="game name" />
         </label>
         <br></br>
         <label>Game Price:
           <br></br>
-          <input type="number" name="price" min='1' max='100' />
+          <input required type="number" name="price" min='1' max='100' />
         </label>
         <br></br>
         <label>Game Genre:
