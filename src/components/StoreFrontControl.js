@@ -29,14 +29,14 @@ class StoreFrontControl extends React.Component {
 
 
   handleClick = () => {
-      if (this.state.selectedPallet != null) {
-        this.setState({
-          formVisibleOnPage: false,
-          selectedPallet: null
-        });
-      } else this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-        detailMenu: 0
+    if (this.state.selectedPallet != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedPallet: null
+      });
+    } else this.setState(prevState => ({
+      formVisibleOnPage: !prevState.formVisibleOnPage,
+      detailMenu: 0
     }));
   }
 
@@ -99,8 +99,8 @@ class StoreFrontControl extends React.Component {
 
   handleDecrementBy = () => {
     console.log(this.state.decrementBy)
-    this.setState({decrementBy: true})
-    
+    this.setState({ decrementBy: true })
+
   }
 
   handlePurchaseResult = (palletBoughtFrom) => {
@@ -127,17 +127,17 @@ class StoreFrontControl extends React.Component {
     let menuButtonText = null;
 
 
-    if (this.state.decrementBy){
-      currentlyVisibleState = <BuyGamesForm pallet = {this.state.selectedPallet} onPurchase={this.handlePurchaseResult}/>
+    if (this.state.decrementBy) {
+      currentlyVisibleState = <BuyGamesForm pallet={this.state.selectedPallet} onPurchase={this.handlePurchaseResult} />
       buttonText = "Return to Available Games"
       menuButtonText = "x"
     }
     else if (this.state.selectedPallet != null && !this.state.decrementBy) {
-      currentlyVisibleState = <PalletDetail 
-      pallet={this.state.selectedPallet} 
-      onUpdateQuantity={this.handleDecrementBy} 
-      onClickingDelete={this.handleDeletePallet}/>
-      
+      currentlyVisibleState = <PalletDetail
+        pallet={this.state.selectedPallet}
+        onUpdateQuantity={this.handleDecrementBy}
+        onClickingDelete={this.handleDeletePallet} />
+
       buttonText = "Return to Available Games"
       menuButtonText = "x"
     }
