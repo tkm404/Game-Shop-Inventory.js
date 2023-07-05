@@ -27,9 +27,14 @@ class StoreFrontControl extends React.Component {
 
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage,
-      detailMenu: 0
+      if (this.state.selectedPallet != null) {
+        this.setState({
+          formVisibleOnPage: false,
+          selectedPallet: null
+        });
+      } else this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+        detailMenu: 0
     }));
   }
 
@@ -63,7 +68,7 @@ class StoreFrontControl extends React.Component {
   }
 
   handleChangingSelectedPallet = (id) => {
-    const selectedPallet = this.state.mainPalletList.filter(pallet => pallet.id)[0];
+    const selectedPallet = this.state.mainPalletList.filter(pallet => pallet.id === id)[0];
     this.setState({ selectedPallet: selectedPallet });
   }
 
@@ -88,6 +93,7 @@ class StoreFrontControl extends React.Component {
       selectedPallet: null
     })
   }
+
 
 
   render() {

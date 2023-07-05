@@ -24,7 +24,8 @@ function PuzzleMenu(props) {
 }
 
 PuzzleMenu.propTypes = {
-  palletList: PropTypes.array
+  palletList: PropTypes.array,
+  onPalletSelection: PropTypes.func
 };
 
 export default PuzzleMenu

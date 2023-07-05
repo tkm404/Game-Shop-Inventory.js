@@ -24,7 +24,8 @@ function DexMenu(props) {
 }
 
 DexMenu.propTypes = {
-  palletList: PropTypes.array
+  palletList: PropTypes.array,
+  onPalletSelection: PropTypes.func
 };
 
 export default DexMenu

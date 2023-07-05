@@ -22,7 +22,8 @@ function StoreFrontList(props) {
 }
 
 StoreFrontList.propTypes = {
-  palletList: PropTypes.array
+  palletList: PropTypes.array,
+  onPalletSelection: PropTypes.func
 };
 
 export default StoreFrontList;

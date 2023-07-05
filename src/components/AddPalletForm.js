@@ -28,7 +28,7 @@ function AddPalletForm(props) {
         <br></br>
         <label>Game Price:
           <br></br>
-          <input type="number" name="price"/>
+          <input type="number" name="price" min='0' max='100'/>
         </label>
         <br></br>
         <label>Game Genre:
