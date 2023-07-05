@@ -6,6 +6,7 @@ import StrategyMenu from "./StrategyMenu";
 import DexMenu from "./DexMenu";
 import PalletDetail from './PalletDetail'
 import SelectGenreForm from "./SelectGenreForm";
+import BuyGamesForm from "./BuyGamesForm";
 
 class StoreFrontControl extends React.Component {
 
@@ -20,7 +21,8 @@ class StoreFrontControl extends React.Component {
       strategyMenu: false,
       dexterityMenu: false,
       selectedPallet: null,
-      userInput: ''
+      userInput: '',
+      decrementBy: false
     };
   }
 
@@ -72,6 +74,7 @@ class StoreFrontControl extends React.Component {
     this.setState({ selectedPallet: selectedPallet });
   }
 
+
   handleGoToAddPallet = (event) => {
     event.preventDefault();
     this.setState({
@@ -91,9 +94,21 @@ class StoreFrontControl extends React.Component {
       dexterityMenu: false,
       userInput: '',
       selectedPallet: null
-    })
+    });
   }
 
+  handleDecrementBy = () => {
+    this.setState({decrementBy: true})
+  }
+
+  handlePurchaseResult = (palletBoughtFrom) => {
+    const purchasedFromMainPalletList = this.state.mainPalletList.filter(pallet => pallet.id !== this.state.selectedPallet.id).concat(palletBoughtFrom);
+    this.setState({
+      mainPalletList: purchasedFromMainPalletList,
+      decrementBy: false,
+      selectedPallet: null
+    })
+  }
 
 
   render() {
@@ -101,8 +116,15 @@ class StoreFrontControl extends React.Component {
     let buttonText = null;
     let menuButtonText = null;
 
-    if (this.state.selectedPallet != null) {
-      currentlyVisibleState = <PalletDetail pallet={this.state.selectedPallet} />
+
+    if (this.state.decrementBy){
+      currentlyVisibleState = <BuyGamesForm pallet = {this.state.selectedPallet} onPurchase={this.handlePurchaseResult}/>
+      buttonText = "Return to Available Games"
+      menuButtonText = "x"
+    }
+    else if (this.state.selectedPallet != null) {
+      currentlyVisibleState = <PalletDetail pallet={this.state.selectedPallet} onUpdateQuantity={this.handleDecrementBy}/>
+      
       buttonText = "Return to Available Games"
       menuButtonText = "x"
     }

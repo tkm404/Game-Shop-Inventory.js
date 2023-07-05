@@ -21,7 +21,8 @@ Pallet.propTypes = {
   price: PropTypes.number,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  whenPalletClicked: PropTypes.func
+  whenPalletClicked: PropTypes.func,
+  whenGameBought: PropTypes.func
   // accolade: PropTypes.string
 }
 
