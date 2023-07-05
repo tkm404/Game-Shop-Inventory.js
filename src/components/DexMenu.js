@@ -10,7 +10,7 @@ function DexMenu(props) {
 
       {props.byDex.map((pallet) =>
         <Pallet
-        whenPalletSelected = {props.onPalletSelection}
+          whenPalletSelected={props.onPalletSelection}
           name={pallet.name}
           genre={pallet.genre}
           price={pallet.price}

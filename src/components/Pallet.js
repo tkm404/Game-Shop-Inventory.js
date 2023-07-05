@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 function Pallet(props) {
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenPalletSelected(props.id)}>
-      <h3>{props.name}</h3>
-      <h3>Genre: {props.genre}</h3>
-      <p><em>${props.price} - item ct.: {props.quantity}</em></p>
-      <hr />       
+      <div onClick={() => props.whenPalletSelected(props.id)}>
+        <h3>{props.name}</h3>
+        <h3>Genre: {props.genre}</h3>
+        <p><em>${props.price} - item ct.: {props.quantity}</em></p>
+        <hr />
       </div>
 
     </React.Fragment>

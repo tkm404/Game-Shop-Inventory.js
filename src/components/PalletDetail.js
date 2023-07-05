@@ -3,21 +3,21 @@ import PropTypes from "prop-types";
 
 
 
-function PalletDetail(props){
+function PalletDetail(props) {
   const { pallet, onClickingDelete } = props;
 
-return (
-  <React.Fragment>
-    <h1>Pallet Detail</h1>
-    <h3>{pallet.name} - {pallet.genre}</h3>
-    <p><em>${pallet.price} - item ct.: {pallet.quantity}</em></p>
+  return (
+    <React.Fragment>
+      <h1>Pallet Detail</h1>
+      <h3>{pallet.name} - {pallet.genre}</h3>
+      <p><em>${pallet.price} - item ct.: {pallet.quantity}</em></p>
 
-    <button onClick={() => onClickingDelete(pallet.id)}>Delete Pallet</button>
-    <button onClick={props.onUpdateQuantity}>Buy Games</button>
-    <hr />
+      <button onClick={() => onClickingDelete(pallet.id)}>Delete Pallet</button>
+      <button onClick={props.onUpdateQuantity}>Buy Games</button>
+      <hr />
 
-  </React.Fragment>
-);
+    </React.Fragment>
+  );
 }
 
 PalletDetail.propTypes = {

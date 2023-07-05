@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 
 
-function BuyGamesForm(props){
-  const {pallet} = props;
+function BuyGamesForm(props) {
+  const { pallet } = props;
 
   function handlePurchaseSubmit(event) {
     event.preventDefault();
@@ -13,7 +13,7 @@ function BuyGamesForm(props){
       price: parseInt(pallet.price),
       genre: pallet.genre,
       id: pallet.id,
-      
+
       quantity: parseInt(pallet.quantity - event.target.quantity.value)
 
 
@@ -21,27 +21,27 @@ function BuyGamesForm(props){
   }
   return (
     <React.Fragment>
-            <form onSubmit={handlePurchaseSubmit}>
+      <form onSubmit={handlePurchaseSubmit}>
         <label>Game Name:
           <br></br>
-          <input name="name" value={pallet.name} readOnly/>
+          <input name="name" value={pallet.name} readOnly />
         </label>
         <br></br>
         <label>Game Price:
           <br></br>
-          <input type="number" name="price" value={pallet.price} readOnly/>
+          <input type="number" name="price" value={pallet.price} readOnly />
         </label>
         <br></br>
         <label>Game Genre:
           <br></br>
-          <input name="genre" value={pallet.genre} readOnly/>
-          
+          <input name="genre" value={pallet.genre} readOnly />
+
         </label>
         <br></br>
         <label>
           Quantity to Purchase:
           <br></br>
-          <input name="quantity" type="number" min= '0' max={pallet.quantity}/>
+          <input name="quantity" type="number" min='0' max={pallet.quantity} />
         </label>
         <br></br>
         <button type="submit">Buy Games</button>
