@@ -10,6 +10,13 @@ A code review for Epicodus React Fundamentals unit. This is a virtual storefront
 * All items can be seen from the main list component, and each genre has a page that can be navigated to which filters the main list down to one genre.
 * To add a new Pallet, navigate to the "Add Pallet Form", and select the button that says "Order new Pallet." This will reset the genre option. Otherwise it will default to "Puzzle."
 
+## Pages/Views/States:
+* "Order Pallet Form" is the starting point. If a user advances with "Choose Genre" without a genre selected, the form will default to "Puzzle". "Return to Available Games" button will show the list of games currently in the inventory, if any. "See games by category:" will advance users through three screens, filtering the inventory by genre, if games are available.
+* "Add Pallet Form" is the secondary form to "Order Pallet" which prompts users to enter a game name and price. The fields are required, so a user is unable to "Add Pallet of Games" without filling out these fields. The Game Genre and Quantity are locked, with the Genre being determined by the selection on the Order form, and 130 being the required example quantity.
+* "Available Games List" displays all games currently in the inventory. "Return to Order Form" will return the user to the "Add Pallet Form" view. The "See games by category:" button is also here with the same functionality. Each game has a "Sell Games" button that will first take the user to the game details page, where another sell button will take them to the actual form. It's a little clunky, but I think it's fine as an intuititve because it's unclear that clicking the div where the game lives will take them to details anyway.
+* "Pallet Detail" shows the games in the pallet's title, price, and quantity. There are buttons to delete the pallet and to sell games from the pallet.
+* "Sell Game" shows the title of the game, price, genre and prompts the user to enter an amount of games to sell. The user cannot exceed the remainder of games this way by means of a required field.
+
 
 
 # Getting Started with Create React App
