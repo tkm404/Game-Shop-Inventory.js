@@ -32,11 +32,13 @@ class StoreFrontControl extends React.Component {
     if (this.state.selectedPallet != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedPallet: null
+        selectedPallet: null,
+        decrementBy: false
       });
     } else this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage,
-      detailMenu: 0
+      detailMenu: 0,
+      decrementBy: false
     }));
   }
 
@@ -57,7 +59,6 @@ class StoreFrontControl extends React.Component {
         detailMenu: prevState.detailMenu + 1
       }));
     }
-    console.log(this.state.detailMenu)
   }
 
   handleAddingNewPalletToList = (newPallet) => {
@@ -108,7 +109,6 @@ class StoreFrontControl extends React.Component {
   }
 
   handleDecrementBy = () => {
-    console.log(this.state.decrementBy)
     this.setState({ decrementBy: true })
 
   }
@@ -172,7 +172,7 @@ class StoreFrontControl extends React.Component {
 
         <StoreFrontList palletList={this.state.mainPalletList} onPalletSelection={this.handleChangingSelectedPallet} />
 
-      buttonText = "Return to Available Games";
+      buttonText = "Return to Order Form";
       menuButtonText = "See games by category: Puzzles";
 
     } else if (this.state.addDetailsFormVisible) {

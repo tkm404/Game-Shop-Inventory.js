@@ -8,6 +8,7 @@ function Pallet(props) {
         <h3>{props.name}</h3>
         <h3>Genre: {props.genre}</h3>
         <p><em>${props.price} - item ct.: {props.quantity}</em></p>
+        <button onClick={props.onUpdateQuantity}>Sell Games</button>
         <hr />
       </div>
 
@@ -22,7 +23,8 @@ Pallet.propTypes = {
   quantity: PropTypes.number,
   id: PropTypes.string,
   whenPalletClicked: PropTypes.func,
-  whenGameBought: PropTypes.func
+  whenGameBought: PropTypes.func,
+  onUpdateQuantity: PropTypes.func
   // accolade: PropTypes.string
 }
 

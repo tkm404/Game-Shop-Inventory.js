@@ -44,7 +44,7 @@ function BuyGamesForm(props) {
           <input name="quantity" type="number" min='0' max={pallet.quantity} />
         </label>
         <br></br>
-        <button type="submit">Buy Games</button>
+        <button type="submit">Sell Games</button>
       </form>
       <hr />
     </React.Fragment>

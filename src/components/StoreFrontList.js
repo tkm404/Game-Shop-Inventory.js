@@ -15,6 +15,7 @@ function StoreFrontList(props) {
           quantity={pallet.quantity}
           id={pallet.id}
           key={pallet.id} />)}
+
       <hr />
     </React.Fragment>
   )

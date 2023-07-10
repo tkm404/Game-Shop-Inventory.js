@@ -13,7 +13,7 @@ function PalletDetail(props) {
       <p><em>${pallet.price} - item ct.: {pallet.quantity}</em></p>
 
       <button onClick={() => onClickingDelete(pallet.id)}>Delete Pallet</button>
-      <button onClick={props.onUpdateQuantity}>Buy Games</button>
+      <button onClick={props.onUpdateQuantity}>Sell Games</button>
       <hr />
 
     </React.Fragment>
