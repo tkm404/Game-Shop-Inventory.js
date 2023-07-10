@@ -8,6 +8,7 @@ A code review for Epicodus React Fundamentals unit. This is a virtual storefront
 * Users can choose to add a pallet of one of three diffrent board game genres to the store inventory.
 * Each pallet contains 130 units, which can be decremented by navigating to a given board game pallet's detail page.
 * All items can be seen from the main list component, and each genre has a page that can be navigated to which filters the main list down to one genre.
+* To add a new Pallet, navigate to the "Add Pallet Form", and select the button that says "Order new Pallet." This will reset the genre option. Otherwise it will default to "Puzzle."
 
 
 
